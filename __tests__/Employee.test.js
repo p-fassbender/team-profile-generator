@@ -1,3 +1,4 @@
+const { expect } = require("@jest/globals");
 const Employee = require("../lib/Employee");
 
 test("creates an employee object", () => {
@@ -6,6 +7,7 @@ test("creates an employee object", () => {
     expect(employee.name).toEqual("Nick");
     expect(employee.id).toBe(123);
     expect(employee.email).toEqual("nick@email.com");
+    expect(employee.role).toEqual("Employee");
 });
 
 test("gets the employee name", () => {
