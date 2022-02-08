@@ -142,7 +142,7 @@ const promptEmployee = (teamData) => {
         {
             type: 'confirm',
             name: 'confirmAddAnother',
-            message: 'Would you like to add another employees?',
+            message: 'Would you like to add another employee?',
             default: false
         }
     ])
