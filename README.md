@@ -1,4 +1,4 @@
-# Professional README Generator
+# Team Profile Generator
 
 The aim of this project was to
 
@@ -27,11 +27,12 @@ with a focus on
 ---
 
 ## Media
-![Insert gif here](./assets/professional-readme-generator.gif)
+![Insert gif here]()
 
-![Insert screenshot here](./assets/professional-readme-generator.png)
+![Insert screenshot here]()
 
 The following link is to this project's github repository
+https://github.com/p-fassbender/team-profile-generator/
 
 ---
 
