@@ -10,8 +10,13 @@ test("creates an employee object", () => {
     expect(manager.role).toEqual("Manager");
 });
 
+test("get the manager office number", () => {
+    const manager = new Manager("Nick", 123, "nick@email.com", 456);
+    expect(manager.getOfficeNumber()).toBe(456)
+});
+
 test("get the manager role", () => {
-    const manager = new Manager("Nick", 123, "nick@email.com");
+    const manager = new Manager("Nick", 123, "nick@email.com", 456);
 
     expect(manager.getRole()).toEqual("Manager");
 });

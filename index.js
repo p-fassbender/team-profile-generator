@@ -1,7 +1,6 @@
 const inquirer = require("inquirer");
-const Engineer = require("./lib/Engineer");
-const Intern = require("./lib/Intern");
-const Manager = require("./lib/Manager");
+const generatePage = require('./src/page-template.js');
+const { writeFile } = require("../../portfolio-generator/utils/generate-site.js");
 
 // default is manager
 const promptManager = () => {
@@ -162,8 +161,18 @@ promptManager()
         if (managerData.confirmAddEmployee) {
             promptEmployee(managerData)
                 .then((teamData) => {
-                    console.log(teamData)
-                }) // return generatePage(teamData)
+                    return generatePage(teamData)
+                })
+                .then((pageHTML) => {
+                    return writeFile(pageHTML)
+                })
+                .catch(err => {
+                    console.log(err);
+                });
+        }
+        else {
+            let genHTML = generatePage(managerData);
+            writeFile(genHTML);
         }
     })
     .catch(err => {
