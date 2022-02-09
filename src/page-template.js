@@ -8,14 +8,16 @@ const generateEmployees = employeeArr => {
             case "Engineer":
                 let Engi = new Engineer(employee.name, employee.id, employee.email, employee.github);
                 return `
-        <div class="card" style="width: 18rem;">
-            <div class="card-body">
-                <h5 class="card-title">${Engi.getName()}</h5>
-                <h6 class="card-subtitle mb-2 text-muted">${Engi.getRole()}</h6>
-                <ul class="list-group list-group-flush">
-                    <li class="list-group-item">ID: ${Engi.getId()}</li>
-                    <li class="list-group-item">Email: ${Engi.getEmail()}</li>
-                    <li class="list-group-item">Github: ${Engi.getGithub()}</li>
+        <div class="card p-0 bg-light bg-light m-3 border shadow" style="min-width: 18rem; max-width: 18rem;">
+            <div class="card-body p-0">
+                <div class = "text-white bg-dark p-3">
+                    <h5 class="card-title">${Engi.getName()}</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">${Engi.getRole()}</h6>
+                </div>
+                <ul class="list-group list-group-flush bg-transparent">
+                    <li class="list-group-item bg-transparent">ID: ${Engi.getId()}</li>
+                    <li class="list-group-item bg-transparent">Email: ${Engi.getEmail()}</li>
+                    <li class="list-group-item bg-transparent">Github: ${Engi.getGithub()}</li>
                 </ul>
             </div>
         </div>
@@ -23,14 +25,16 @@ const generateEmployees = employeeArr => {
             case "Intern":
                 let Int = new Intern(employee.name, employee.id, employee.email, employee.school);
                 return `
-        <div class="card" style="width: 18rem;">
-            <div class="card-body">
-                <h5 class="card-title">${Int.getName()}</h5>
-                <h6 class="card-subtitle mb-2 text-muted">${Int.getRole()}</h6>
-                <ul class="list-group list-group-flush">
-                    <li class="list-group-item">ID: ${Int.getId()}</li>
-                    <li class="list-group-item">Email: ${Int.getEmail()}</li>
-                    <li class="list-group-item">School: ${Int.getSchool()}</li>
+        <div class="card p-0 bg-light bg-light m-3 border shadow" style="min-width: 18rem; max-width: 18rem;">
+            <div class="card-body p-0">
+                <div class = "text-white bg-dark p-3">
+                    <h5 class="card-title">${Int.getName()}</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">${Int.getRole()}</h6>
+                </div>
+                <ul class="list-group list-group-flush bg-transparent">
+                    <li class="list-group-item bg-transparent">ID: ${Int.getId()}</li>
+                    <li class="list-group-item bg-transparent">Email: ${Int.getEmail()}</li>
+                    <li class="list-group-item bg-transparent">School: ${Int.getSchool()}</li>
                 </ul>
             </div>
         </div>
@@ -43,14 +47,16 @@ const generateEmployees = employeeArr => {
 const generateManager = manager => {
     let managerObj = new Manager(manager.name, manager.id, manager.email, manager.officeNumber)
     return `
-        <div class="card" style="width: 18rem;">
-            <div class="card-body">
-                <h5 class="card-title">${managerObj.getName()}</h5>
-                <h6 class="card-subtitle mb-2 text-muted">${managerObj.getRole()}</h6>
-                <ul class="list-group list-group-flush">
-                    <li class="list-group-item">ID: ${managerObj.getId()}</li>
-                    <li class="list-group-item">Email: ${managerObj.getEmail()}</li>
-                    <li class="list-group-item">Office Number: ${managerObj.getOfficeNumber()}</li>
+        <div class="card p-0 bg-light bg-light m-3 border shadow" style="min-width: 18rem; max-width: 18rem;">
+            <div class="card-body p-0">
+                <div class = "text-white bg-dark p-3">
+                    <h5 class="card-title ">${managerObj.getName()}</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">${managerObj.getRole()}</h6>
+                </div>
+                <ul class="list-group list-group-flush bg-transparent">
+                    <li class="list-group-item bg-transparent">ID: ${managerObj.getId()}</li>
+                    <li class="list-group-item bg-transparent">Email: ${managerObj.getEmail()}</li>
+                    <li class="list-group-item bg-transparent">Office Number: ${managerObj.getOfficeNumber()}</li>
                 </ul>
             </div>
         </div>
@@ -75,16 +81,16 @@ module.exports = templateData => {
     </head>
   
     <body>
-        <header>
+        <header class = "text-center text-white bg-primary p-3 mb-3">
             <h1>My Team</h1>
         </header>
 
-        <main class = "card-group">
+        <main class = "card-group justify-content-around">
             ${generateManager(manager)}
             ${employees? generateEmployees(employees) : ``}
         </main>
 
-        <footer>
+        <footer class = "footer">
             <h3> ${new Date().getFullYear()} by Preston Fassbender</h3>
         </footer>
 
