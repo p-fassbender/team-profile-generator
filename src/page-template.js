@@ -2,52 +2,54 @@ const Engineer = require("../lib/Engineer");
 const Intern = require("../lib/Intern");
 const Manager = require("../lib/Manager");
 
-const generateEmployees = employeeArr => {
-    let templateArr = employeeArr.map(employee => {
+// generates the html for the manager card using the employees array from teamData
+const generateEmployees = employees => {
+    let employeeCardsArr = employees.map(employee => {
         switch (employee.role) {
             case "Engineer":
-                let Engi = new Engineer(employee.name, employee.id, employee.email, employee.github);
+                let engineerObj = new Engineer(employee.name, employee.id, employee.email, employee.github);
                 return `
-        <div class="card p-0 bg-light bg-light m-3 border shadow" style="min-width: 18rem; max-width: 18rem;">
+        <div class="card m-3 p-0 bg-light border" style="min-width: 18rem; max-width: 18rem;">
             <div class="card-body p-0">
                 <div class = "text-white bg-dark p-3">
-                    <h5 class="card-title">${Engi.getName()}</h5>
-                    <h6 class="card-subtitle mb-2 text-muted">${Engi.getRole()}</h6>
+                    <h5 class="card-title">${engineerObj.getName()}</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">${engineerObj.getRole()}</h6>
                 </div>
                 <ul class="list-group list-group-flush bg-transparent">
-                    <li class="list-group-item bg-transparent">ID: ${Engi.getId()}</li>
-                    <li class="list-group-item bg-transparent">Email: ${Engi.getEmail()}</li>
-                    <li class="list-group-item bg-transparent">Github: ${Engi.getGithub()}</li>
+                    <li class="list-group-item bg-transparent">ID: ${engineerObj.getId()}</li>
+                    <li class="list-group-item bg-transparent">Email: ${engineerObj.getEmail()}</li>
+                    <li class="list-group-item bg-transparent">Github: ${engineerObj.getGithub()}</li>
                 </ul>
             </div>
         </div>
                 `
             case "Intern":
-                let Int = new Intern(employee.name, employee.id, employee.email, employee.school);
+                let integerObj = new Intern(employee.name, employee.id, employee.email, employee.school);
                 return `
-        <div class="card p-0 bg-light bg-light m-3 border shadow" style="min-width: 18rem; max-width: 18rem;">
+        <div class="card m-3 p-0 bg-light border" style="min-width: 18rem; max-width: 18rem;">
             <div class="card-body p-0">
                 <div class = "text-white bg-dark p-3">
-                    <h5 class="card-title">${Int.getName()}</h5>
-                    <h6 class="card-subtitle mb-2 text-muted">${Int.getRole()}</h6>
+                    <h5 class="card-title">${integerObj.getName()}</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">${integerObj.getRole()}</h6>
                 </div>
                 <ul class="list-group list-group-flush bg-transparent">
-                    <li class="list-group-item bg-transparent">ID: ${Int.getId()}</li>
-                    <li class="list-group-item bg-transparent">Email: ${Int.getEmail()}</li>
-                    <li class="list-group-item bg-transparent">School: ${Int.getSchool()}</li>
+                    <li class="list-group-item bg-transparent">ID: ${integerObj.getId()}</li>
+                    <li class="list-group-item bg-transparent">Email: ${integerObj.getEmail()}</li>
+                    <li class="list-group-item bg-transparent">School: ${integerObj.getSchool()}</li>
                 </ul>
             </div>
         </div>
                 `
         }
     });
-    return templateArr.join('');
+    return employeeCardsArr.join('');
 }
 
+// generates the html for the manager card using the manager data from teamData
 const generateManager = manager => {
     let managerObj = new Manager(manager.name, manager.id, manager.email, manager.officeNumber)
     return `
-        <div class="card p-0 bg-light bg-light m-3 border shadow" style="min-width: 18rem; max-width: 18rem;">
+        <div class="card m-3 p-0 bg-light border" style="min-width: 18rem; max-width: 18rem;">
             <div class="card-body p-0">
                 <div class = "text-white bg-dark p-3">
                     <h5 class="card-title ">${managerObj.getName()}</h5>
@@ -63,9 +65,9 @@ const generateManager = manager => {
         `
 }
 
-module.exports = templateData => {
+module.exports = teamData => {
     // destructure page data by section
-    const { employees, ...manager } = templateData;
+    const { employees, ...manager } = teamData;
     return `
     <!DOCTYPE html>
     <html lang="en">
@@ -90,7 +92,7 @@ module.exports = templateData => {
             ${employees? generateEmployees(employees) : ``}
         </main>
 
-        <footer class = "footer">
+        <footer class = "footer fixed-bottom p-3">
             <h3> ${new Date().getFullYear()} by Preston Fassbender</h3>
         </footer>
 

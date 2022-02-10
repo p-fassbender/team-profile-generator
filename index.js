@@ -1,8 +1,8 @@
 const inquirer = require("inquirer");
 const generatePage = require('./src/page-template.js');
-const { writeFile } = require("../../portfolio-generator/utils/generate-site.js");
+const { writeFile } = require("./src/generate-site.js");
 
-// default is manager
+// inquire prompt to get manager information
 const promptManager = () => {
     return inquirer.prompt([
         {
@@ -67,6 +67,7 @@ const promptManager = () => {
     ])
 }
 
+// inquirer prompt to get information about the employees
 const promptEmployee = (teamData) => {
     if (!teamData.employees) {
         teamData.employees = [];
@@ -158,12 +159,15 @@ const promptEmployee = (teamData) => {
 
 promptManager()
     .then((managerData) => {
+        // prompts employee questions only if the manager confirms they want to add more employees to the team
         if (managerData.confirmAddEmployee) {
             promptEmployee(managerData)
                 .then((teamData) => {
+                    // sends the full manager/employee promise into page-template.js to generate the index.html
                     return generatePage(teamData)
                 })
                 .then((pageHTML) => {
+                    // sends the generated pageHTML to be written as a file
                     return writeFile(pageHTML)
                 })
                 .catch(err => {
@@ -171,8 +175,8 @@ promptManager()
                 });
         }
         else {
-            let genHTML = generatePage(managerData);
-            writeFile(genHTML);
+            let pageHTML = generatePage(managerData);
+            writeFile(pageHTML);
         }
     })
     .catch(err => {
