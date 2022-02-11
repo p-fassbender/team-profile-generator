@@ -10,26 +10,33 @@ The aim of this project was to
 [Questions](#questions) <br>
 
 ## Technologies Used
-* 
-* 
-* 
+* Node.js
+* JavaScript
+* HTML
 
-with a focus on 
+with a focus on OOP, npm Inquirer, and TDD
 
 ---
 
 ## Installation
+Navigate to the root directory in the terminal and initialize the project with **npm install** to install all the proper node module dependencies
 
 ---
 
 ## Use
+Navigate to the root directory in the terminal and type **node index.js** to run the project
+
+---
+
+## Tests
+Navigate to the root directory in the terminal and type **npm run test** to run the project
 
 ---
 
 ## Media
 ![Insert gif here]()
 
-![Insert screenshot here]()
+![Screenshot of a populated team profile page](./assets/team-profile-generator.png)
 
 The following link is to this project's github repository
 https://github.com/p-fassbender/team-profile-generator/
@@ -38,7 +45,6 @@ https://github.com/p-fassbender/team-profile-generator/
 
 ## Questions
 Any questions feel free to contact me via [my github](https://github.com/p-fassbender) or by sending me an email at fassbenderp0551@gmail.com.
-
 
 ---
 

@@ -74,6 +74,13 @@ const promptEmployee = (teamData) => {
     }
     return inquirer.prompt([
         {
+            type: 'list',
+            name: 'role',
+            message: 'What type of employee is this?',
+            choices: ["Engineer", "Intern"],
+            default: "Engineer"
+        },
+        {
             type: 'input',
             name: 'name',
             message: 'What is their name? (Required)',
@@ -103,13 +110,6 @@ const promptEmployee = (teamData) => {
                     return false;
                 }
             }
-        },
-        {
-            type: 'list',
-            name: 'role',
-            message: 'What type of employee is this?',
-            choices: ["Engineer", "Intern"],
-            default: "Engineer"
         },
         {
             type: 'input',
