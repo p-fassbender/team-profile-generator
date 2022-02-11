@@ -34,7 +34,7 @@ Navigate to the root directory in the terminal and type **npm run test** to run 
 ---
 
 ## Media
-![walkthrough video of how to run the program](https://user-images.githubusercontent.com/36012762/153655398-23249c8a-be44-491d-9839-6b2b12e6300a.mp4)
+https://user-images.githubusercontent.com/36012762/153655398-23249c8a-be44-491d-9839-6b2b12e6300a.mp4
 
 ![Screenshot of a populated team profile page](./assets/team-profile-generator.png)
 
