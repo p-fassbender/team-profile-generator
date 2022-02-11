@@ -17,8 +17,8 @@ const generateEmployees = employees => {
                 </div>
                 <ul class="list-group list-group-flush bg-transparent">
                     <li class="list-group-item bg-transparent">ID: ${engineerObj.getId()}</li>
-                    <li class="list-group-item bg-transparent">Email: ${engineerObj.getEmail()}</li>
-                    <li class="list-group-item bg-transparent">Github: ${engineerObj.getGithub()}</li>
+                    <li class="list-group-item bg-transparent">Email: <a href="mailto:${engineerObj.getEmail()}">${engineerObj.getEmail()}</a></li>
+                    <li class="list-group-item bg-transparent">Github: <a href="https://github.com/${engineerObj.getGithub()}" target="_blank">${engineerObj.getGithub()}</a></li>
                 </ul>
             </div>
         </div>
@@ -34,7 +34,7 @@ const generateEmployees = employees => {
                 </div>
                 <ul class="list-group list-group-flush bg-transparent">
                     <li class="list-group-item bg-transparent">ID: ${integerObj.getId()}</li>
-                    <li class="list-group-item bg-transparent">Email: ${integerObj.getEmail()}</li>
+                    <li class="list-group-item bg-transparent">Email: <a href="mailto:${integerObj.getEmail()}">${integerObj.getEmail()}</a></li>
                     <li class="list-group-item bg-transparent">School: ${integerObj.getSchool()}</li>
                 </ul>
             </div>
@@ -57,7 +57,7 @@ const generateManager = manager => {
                 </div>
                 <ul class="list-group list-group-flush bg-transparent">
                     <li class="list-group-item bg-transparent">ID: ${managerObj.getId()}</li>
-                    <li class="list-group-item bg-transparent">Email: ${managerObj.getEmail()}</li>
+                    <li class="list-group-item bg-transparent">Email: <a href="mailto:${managerObj.getEmail()}">${managerObj.getEmail()}</a></li>
                     <li class="list-group-item bg-transparent">Office Number: ${managerObj.getOfficeNumber()}</li>
                 </ul>
             </div>
