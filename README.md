@@ -1,6 +1,6 @@
 # Team Profile Generator
 
-The aim of this project was to
+The aim of this project was to generate a webpage that displays my team's basic information so that I have quick access to their emails and github pages.
 
 ## Table of Contents
 [Technologies Used](#technologies-used) <br>
@@ -34,7 +34,7 @@ Navigate to the root directory in the terminal and type **npm run test** to run 
 ---
 
 ## Media
-![Insert gif here]()
+![walkthrough video of how to run the program](https://user-images.githubusercontent.com/36012762/153655398-23249c8a-be44-491d-9839-6b2b12e6300a.mp4)
 
 ![Screenshot of a populated team profile page](./assets/team-profile-generator.png)
 
